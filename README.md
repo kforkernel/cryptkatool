@@ -4,7 +4,7 @@ A lightweight Rust command-line utility for text and password encryption using *
 
 ## Features
 
-- **AES-256-GCM Encryption:** Authenticated encryption via [`aes-gcm`](https://crates.io).
+- **AES-256-GCM Encryption:** Authenticated encryption via [`aes-gcm`](https://crates.io/crates/aes-gcm).
 - **Automatic Key & Nonce Generation:** Generates a secure key and nonce per run.
 - **Separated Output:** Saves ciphertext and secrets into distinct files.
 - **Smart Extension Handling:** Retains original file extensions for secret files or defaults to `.txt`.
@@ -16,7 +16,7 @@ A lightweight Rust command-line utility for text and password encryption using *
 ## Installation
 
 ```bash
-git clone https://github.com
+git clone https://github.com/kforkernel/cryptkatool.git
 cd cryptkatool
 cargo build --release
 ```
@@ -37,6 +37,12 @@ Or using compiled binaries:
 ./target/release/cryptkatool <word_to_encrypt> <output_file>
 ```
 
+Move cryptkatool into the `/usr/local/bin` directory:
+
+```bash
+sudo mv ./target/release/cryptkatool /usr/local/bin
+```
+
 ### macOS *(Untested)*
 ```bash
 ./target/release/cryptkatool <word_to_encrypt> <output_file>
@@ -53,6 +59,17 @@ Or using compiled binaries:
 ./target/release/cryptkatool "MySuperSecretPassword" password.txt
 ```
 
+**Terminal Output:**
+```text
+Printing encrypted password to: password.txt
+Printing key and nonce to: password_secrets.txt
+
+Encrypted password: 8f9a2b3c4d...
+```
+
+**Generated Files:**
+- **`password.txt`** — Contains the hex-encoded ciphertext.
+- **`password_secrets.txt`** — Contains the hex-encoded `Key` and `Nonce` required for decryption and the `original` and `encrypted` passwords.
 ## Security Disclaimer
 
 Built for learning and personal utility. Keep your `_secrets` files safe and never commit sensitive keys or passwords to version control.
