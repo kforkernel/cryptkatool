@@ -4,7 +4,7 @@ A lightweight command-line utility written in Rust that encrypts text and passwo
 
 ## Features
 
-- **AES-256-GCM Encryption:** Uses authenticated encryption via the [`aes-gcm`]([https://crates.io](https://crates.io/crates/aes-gcm)) crate.
+- **AES-256-GCM Encryption:** Uses authenticated encryption via the [`aes-gcm`](https://crates.io/crates/aes-gcm)) crate.
 - **Automatic Key & Nonce Generation:** Generates a fresh, cryptographically secure key and nonce for every run.
 - **Separated Output:** Saves the encrypted ciphertext to your chosen file and stores the matching key and nonce in a separate `_secrets` file.
 - **Smart Extension Handling:** Preserves your output file extension (e.g., `.txt`, `.csv`) for the secrets file, or defaults to `.txt` if none is provided.
