@@ -1,6 +1,6 @@
 # cryptkatool
 
-A lightweight Rust command-line utility for text and password encryption using **AES-256-GCM** [`aes-gcm`](https://crates.io), which automatically generates a 256-bit key and 96-bit nonce, saving ciphertext and decryption secrets separately.
+A lightweight Rust command-line utility for text and password encryption using **AES-256-GCM**, which automatically generates a 256-bit key and 96-bit nonce, saving ciphertext and decryption secrets separately.
 
 ## Features
 
@@ -19,6 +19,9 @@ A lightweight Rust command-line utility for text and password encryption using *
 git clone https://github.com/kforkernel/cryptkatool
 cd cryptkatool
 cargo build --release
+
+# Move binary into `/usr/local/bin/` directory:
+sudo mv ./target/release/cryptkatool
 ```
 
 ## Usage
