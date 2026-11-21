@@ -4,10 +4,10 @@ A lightweight command-line utility written in Rust that encrypts text and passwo
 
 ## Features
 
-- **AES-256-GCM Encryption:** Uses authenticated encryption via the [`aes-gcm`](https://crates.io) crate.
+- **AES-256-GCM Encryption:** Uses authenticated encryption via the [`aes-gcm`]([https://crates.io](https://crates.io/crates/aes-gcm)) crate.
 - **Automatic Key & Nonce Generation:** Generates a fresh, cryptographically secure key and nonce for every run.
 - **Separated Output:** Saves the encrypted ciphertext to your chosen file and stores the matching key and nonce in a separate `_secrets` file.
-- **Smart Extension Handling:** Preserves your output file extension (e.g., `.txt`, `.csv`) for the secrets file, or defaults to `.md` if none is provided.
+- **Smart Extension Handling:** Preserves your output file extension (e.g., `.txt`, `.csv`) for the secrets file, or defaults to `.txt` if none is provided.
 
 ## Prerequisites
 
@@ -17,8 +17,8 @@ A lightweight command-line utility written in Rust that encrypts text and passwo
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com
-   cd rustcrypt
+   git clone https://github.com/kforkernel/cryptkatool
+   cd cryptkatool
    ```
 
 2. Build the release binary:
@@ -26,7 +26,7 @@ A lightweight command-line utility written in Rust that encrypts text and passwo
    cargo build --release
    ```
 
-The compiled binary will be available at `target/release/rustcrypt`.
+The compiled binary will be available at `target/release/cryptkatool`.
 
 ## Usage
 
@@ -39,13 +39,13 @@ cargo run -- <word_to_encrypt> <output_file>
 Or, if using the compiled binary directly:
 
 ```bash
-./target/release/rustcrypt <word_to_encrypt> <output_file>
+./target/release/cryptkatool <word_to_encrypt> <output_file>
 ```
 
 ### Example
 
 ```bash
-rustcrypt "MySuperSecretPassword" password.txt
+cryptkatool "MySuperSecretPassword" password.txt
 ```
 
 **Terminal Output:**
@@ -58,7 +58,7 @@ Encrypted password: 8f9a2b3c4d...
 
 **Generated Files:**
 - **`password.txt`** — Contains the hex-encoded ciphertext.
-- **`password_secrets.txt`** — Contains the hex-encoded `Key` and `Nonce` required for decryption.
+- **`password_secrets.txt`** — Contains the hex-encoded `Key` and `Nonce` required for decryption and the `original` and `encrypted` passwords.
 
 ## Security Disclaimer
 
