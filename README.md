@@ -16,7 +16,7 @@ A lightweight Rust command-line utility for text and password encryption using *
 ## Installation
 
 ```bash
-git clone https://github.com/kforkernel/cryptkatool.git
+git clone https://github.com/kforkernel/cryptkatool.com
 cd cryptkatool
 cargo build --release
 ```
