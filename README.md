@@ -73,3 +73,8 @@ Encrypted password: 8f9a2b3c4d...
 ## Security Disclaimer
 
 Built for learning and personal utility. Keep your `_secrets` files safe and never commit sensitive keys or passwords to version control.
+
+## License
+
+This project is under the kforkernel Use License (KUL) v1.0.
+For more details, read [LICENSE.md](LICENSE.md).
